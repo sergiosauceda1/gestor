@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Edit Task: <%= task.id %></h1>
+    <form action="/update-task/<%= task.id %>" method="post">
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="En progreso" <%= task.status === 'En progreso' ? 'selected' : '' %>>En progreso</option>
+            <option value="Rechazado" <%= task.status === 'Rechazado' ? 'selected' : '' %>>Rechazado</option>
+            <option value="Cancelado" <%= task.status === 'Cancelado' ? 'selected' : '' %>>Cancelado</option>
+            <option value="Cerrado" <%= task.status === 'Cerrado' ? 'selected' : '' %>>Cerrado</option>
+            <option value="En pruebas de calidad" <%= task.status === 'En pruebas de calidad' ? 'selected' : '' %>>En pruebas de calidad</option>
+            <option value="En validación por el usuario" <%= task.status === 'En validación por el usuario' ? 'selected' : '' %>>En validación por el usuario</option>
+            <
+
+            option value="En proceso de liberación" <%= task.status === 'En proceso de liberación' ? 'selected' : '' %>>En proceso de liberación</option>
+        </select>
+        <br>
+        <label for="newComment">New Comment:</label>
+        <textarea id="newComment" name="newComment"></textarea>
+        <br>
+        <button type="submit">Update Task</button>
+        </form>
+        <h2>Existing Comments</h2>
+        <p><%= task.comments %></p>
+        
+        </body>
+        </html>
+        
